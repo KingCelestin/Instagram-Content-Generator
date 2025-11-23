@@ -1,0 +1,139 @@
+# .claude - Persistent Rules (More Effective Than CLAUDE.md)
+
+## META INSTRUCTION
+**FOLLOW THESE RULES AT ALL TIMES.**
+Reference @/.claude before EVERY action.
+This file persists across sessions.
+
+---
+
+## RAPID WEB APP BUILD RULES
+
+### TIMING
+Complete in 60-90min MAX. Alert if over 45min.
+
+### TECH STACK (Enforce Strictly)
+✅ Vanilla React + JavaScript  
+✅ Vite (NOT Next.js)  
+✅ Tailwind CSS only  
+❌ NO TypeScript  
+❌ NO Next.js  
+❌ NO tests  
+❌ NO database  
+❌ NO auth middleware  
+
+### FILES LIMIT
+MAX 5 files:
+1. index.html or App.jsx
+2. app.js or main component  
+3. style.css or Tailwind config
+4. utils.js or claudeApi.js
+5. vercel.json
+
+ALSO CREATE: .env.example (doesn't count)
+
+### DEPLOYMENT (CRITICAL)
+ALWAYS generate:
+- vercel.json with build config
+- .env.example (NO secrets)
+- package.json with "vercel-build": "npm run build"
+
+TEST before deploy: `npx vercel dev`
+
+### UI REQUIREMENTS
+- Mobile-first: Tailwind sm/md/lg breakpoints
+- Dark theme: prefers-color-scheme + CSS vars
+- Copy-to-clipboard: navigator.clipboard with iOS fallback
+- Loading: skeleton UI during async
+- Errors: User-friendly messages ("Try again" not tech jargon)
+
+### API INTEGRATION
+- fetch with {mode: 'cors'}
+- process.env.VITE_ANTHROPIC_API_KEY
+- NO hardcoded secrets
+- Rate limit: 100ms delays
+- try/catch with friendly errors
+
+### SECURITY (DEMO CONTEXT)
+- .env.example ONLY (never commit .env)
+- Client-side API calls acceptable for demos
+- Add warning: "Demo only - use backend for production"
+- Password auth: Simple client-side hash with warning
+
+### TOKEN MANAGEMENT
+- Monitor: /usage every 20min
+- Prune: /context prune irrelevant files
+- Commit: Git every 20min chunks
+- Confirm before >100 lines
+- Use: --fast-mode for 30% speed boost
+
+### DATE AWARENESS
+Current: Friday, November 21, 2025
+Use latest 2025 packages
+Confirm year before searches
+
+---
+
+## FORBIDDEN ACTIONS
+
+NEVER:
+- Add TypeScript without explicit request
+- Use Next.js for simple SPAs
+- Add testing frameworks
+- Create database schemas
+- Implement auth middleware
+- Install >5 npm packages
+- Create >5 core files
+- Spend >15min on one component
+- Refactor working code
+- Read actual .env files (use .env.example)
+
+---
+
+## RED FLAGS (STOP IMMEDIATELY)
+
+If proposing:
+- TypeScript "for type safety"
+- Tests "for reliability"
+- Next.js "for better DX"
+- Database "for persistence"
+- Auth "for security"
+- >5 files
+- Complex abstractions
+
+**STOP. Simplify. Stay minimal.**
+
+---
+
+## DECISION SHORTCUTS
+
+- In doubt? Choose simpler option.
+- Works? Move on. Don't refactor.
+- Over 45min? Cut features.
+- Token warning? Prune context.
+- Deployment fail? Check vercel.json.
+
+---
+
+## POWER COMMANDS
+
+Use these:
+- `--fast-mode` for speed
+- `/usage` to monitor tokens
+- `/context prune` to clean context
+- `/plan` before implementing
+- `npx vercel dev` before deploy
+
+---
+
+## SUCCESS = WORKING DEMO IN <90MIN
+
+Not perfection. Not elegance. DONE.
+
+Speed > Perfect  
+Working > Elegant  
+Shipped > Polished
+
+---
+
+Reference @/.claude before every action.
